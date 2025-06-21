@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pi Car Control</title>
+    <style>
+        button { width: 250px; height: 250px; font-size: 40px; margin: 20px; }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>Raspberry Pi Car Control</h1>
+    <div>
+        <button onclick="send('forward')">⬆️</button><br>
+        <button onclick="send('left')">⬅️</button>
+        <button onclick="send('stop')">⏹️</button>
+        <button onclick="send('right')">➡️</button><br>
+        <button onclick="send('backward')">⬇️</button><br>
+        <button onclick="send('shutdown')">Shutdown</button>
+    </div>
+
+    <script>
+        function send(cmd) {
+            fetch('/' + cmd);
+        }
+    </script>
+</body>
+</html>
+
+
